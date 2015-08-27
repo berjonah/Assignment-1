@@ -1,0 +1,36 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Andrew Fillmore}
+\title{Assignment 1}
+\begin{document}
+\maketitle
+\section*{Problem 6}
+\subsection*{a}
+$d_{prop}=m/s$
+\subsection*{b}
+$d_{trans}=L/R$
+\subsection*{c}
+The end-to-end delay will be $d_{total}$.
+Then $d_{total}=d_{prop}+d_{trans}$
+\subsection*{d}
+At time $t=d_{trans}$ the last bit of the packet will be being transmitted from Host A.
+\subsection*{e}
+If $d_{prop}>d_{trans}$ then at time $t=d_{trans}$ the first bit will be at $d_{trans}\times s$ meters.
+\subsection*{f}
+if $d_{prop}<d_{trans}$ then at time $t=d_{trans}$ the first bit will have arrived at Host B already.
+\subsection*{g}
+If
+$$d_{trans}=L/R=120/56000=3/1400$$
+then
+$$d_{prop}=3/1400.$$
+Because
+$$d_{prop}=m/s\Rightarrow m=d_{prop}\times s$$
+then
+$$m=(3/1400)\times2.5\times10^{8}=535,714.28571428571428571428571429meters$$
+\end{document}
