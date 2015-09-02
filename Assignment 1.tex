@@ -12,19 +12,25 @@
 \maketitle
 \section*{Problem 6}
 \subsection*{a}
+
 $d_{prop}=m/s$
 \subsection*{b}
+
 $d_{trans}=L/R$
 \subsection*{c}
+
 The end-to-end delay will be $d_{total}$.
 Then $d_{total}=d_{prop}+d_{trans}$
 \subsection*{d}
 At time $t=d_{trans}$ the last bit of the packet will be being transmitted from Host A.
 \subsection*{e}
+
 If $d_{prop}>d_{trans}$ then at time $t=d_{trans}$ the first bit will be at $d_{trans}\times s$ meters.
 \subsection*{f}
-if $d_{prop}<d_{trans}$ then at time $t=d_{trans}$ the first bit will have arrived at Host B already.
+
+If $d_{prop}<d_{trans}$ then at time $t=d_{trans}$ the first bit will have arrived at Host B already.
 \subsection*{g}
+
 If
 $$d_{trans}=L/R=120/56000=3/1400$$
 then
@@ -34,6 +40,7 @@ $$d_{prop}=m/s\Rightarrow m=d_{prop}\times s$$
 then
 $$m=(3/1400)\times2.5\times10^{8}=535,714.28571428571428571428571429meters$$
 \section*{10}
+
 The total end-to-end delay for the packets will be
 $$\frac{d_1}{s_1}+\frac{L}{R_1}+d_{proc}+\frac{d_2}{s_2}+\frac{L}{R_2}+d_{proc}+\frac{d_3}{s_3}+\frac{L}{R_3}.$$
 With values the delay will be
@@ -41,10 +48,55 @@ $$\frac{5000km}{2.5\times10^8m/s}+\frac{1500b}{2Mbps}+3ms+\frac{4000km}{2.5\time
 $$=0.02s+0.75ms+3ms+0.016s+0.75ms+3ms+0.004s+0.75ms$$
 $$=48.3ms$$
 \section*{11}
+
 Assumption: This problem is asking for the general form, not using the specific values from the previous problem.
 
 The end-to-end delay for this new system will be
 $$\frac{L}{R}+\frac{d_1}{s_1}+\frac{d_2}{s_2}+\frac{d_3}{s_3}.$$
 \section*{18}
 
+\section*{23}
+\subsection*{a}
+
+The inter-arrival time will be $\frac{L}{R_s}+\frac{L}{R_c}$ seconds.
+This is assuming the router is using store-forwarding.
+If the router is not using store-forwarding then the inter-arrival time will be $2\frac{L}{R_s}$ seconds.
+\subsection*{b}
+
+If the router is using store-forwarding then there will always be a delay while waiting for the entire packet to arrive. Even if the router is not using store-forwarding the second packet will be queued for $\frac{L}{R_c}-\frac{L}{R_s}$ seconds.
+This is the difference between the time each link takes to transmit a packet.
+Therefore $T$ must be $\frac{L}{R_c}-\frac{L}{R_s}$ to ensure no queuing.
+\section*{24}
+40 terabytes is $3.2\times10^{14}$ bits.
+It will take $3.2\times10^6$ seconds to transmit which is equivalent to 37 days 5 minutes 20 seconds.
+Therefore it would be better to send the data by FedEx.
+
+``Never underestimate the bandwidth of a station wagon full of tapes hurtling down the highway." - Andrew S. Tanenbaum
+
+\section*{31}
+\subsection*{a}
+
+It will take 4 seconds to move the message from the source host to the first packet switch.
+Assuming that there are 2 switches between the source and the the host, it will take 12 seconds to move the message from source host to destination host.
+\subsection*{b}
+
+It will take 5ms to move the first packet from source host to the first switch.
+The second packet will be fully received by the first switch at 10ms.
+\subsection*{c}
+
+It will take 4 seconds plus a pseudo- delay of 10 ms to fully transmit the entire message.
+That is 4.01 seconds.
+This is nearly one-third of the non-segmented message.
+This makes sense as segmenting will allow for pipelining and more throughput.
+\subsection*{d}
+
+One reason to use message segmentation is that all the segments don't need to be sent down the same paths.
+They can be spread out so that they don't cause congestion in one part of the internet.
+Also, segmentation means that even if some of the packets are lost, most of the data will most likely be received by the client.
+
+\subsection*{e}
+
+A drawback of smessage segmentation is that it requires a lot more setup than non-segmented messages. 
+Each packet must contain all the information about where it needs to go.
+Also the packets will need to be reassembled, which will be much harder if the packets arrive out of order.
 \end{document}
